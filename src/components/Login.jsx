@@ -80,7 +80,7 @@ function Login() {
             disabled={loading}
             className="w-full h-11 mt-2 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-300 text-white font-medium rounded-xl transition-colors cursor-pointer flex items-center justify-center"
           >
-            {loading ? "Loading" : "Enter"}
+            Enter
           </button>
         </form>
       </div>
