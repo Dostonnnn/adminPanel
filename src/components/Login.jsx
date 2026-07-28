@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +10,7 @@ function Login() {
 
   const handleUsername = (e) => setUsername(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -33,7 +33,12 @@ function Login() {
       .then((res) => {
         console.log(res.data);
         toast.success("Successfully!");
-        localStorage.setItem("token", res.data.token);
+        const token = localStorage.setItem("token", res.data.token);
+        if (!token) {
+          navigate("dashboard/products");
+        } else {
+          alert("error");
+        }
       })
       .catch(() => {
         toast.error("Invalid username or password!");
