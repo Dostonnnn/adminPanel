@@ -71,7 +71,7 @@ function Login() {
 
           <div className="flex flex-col gap-1.5">
             <input
-              type="password"
+              type="text"
               placeholder="Password"
               value={password}
               onChange={handlePassword}
