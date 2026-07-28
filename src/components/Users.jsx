@@ -23,7 +23,7 @@ export default function Users() {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-white bg-blue-600 rounded-2xl p-3 mb-6 mt-6">
+      <h2 className="text-3xl font-bold text-white bg-blue-600 rounded-xl px-3 py-1 mb-6 mt-6 w-fit">
         Users
       </h2>
 
