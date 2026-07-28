@@ -19,16 +19,18 @@ export default function Carts() {
       });
   }, []);
 
-  if (loading) return <p className="text-gray-500">Yuklanmoqda...</p>;
+  if (loading) return <p className="text-gray-500">Loading</p>;
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Carts</h2>
+      <h2 className="text-3xl font-bold text-white bg-blue-600 rounded-2xl p-3 mb-6 mt-6 ">
+        Carts
+      </h2>
 
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-blue-600">
               <th className="px-5 py-3 text-sm font-semibold text-gray-700">
                 Cart ID
               </th>
@@ -50,9 +52,7 @@ export default function Carts() {
                 <td className="px-5 py-3 text-sm text-gray-600">
                   {cart.userId}
                 </td>
-                <td className="px-5 py-3 text-sm text-gray-600">
-                  {new Date(cart.date).toLocaleDateString()}
-                </td>
+                <td className="px-5 py-3 text-sm text-gray-600">{cart.date}</td>
                 <td className="px-5 py-3 text-sm text-gray-600">
                   {cart.products.length}
                 </td>

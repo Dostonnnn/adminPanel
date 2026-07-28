@@ -2,7 +2,6 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/");
@@ -42,7 +41,7 @@ export default function Dashboard() {
       </div>
 
       <div className="flex-1 p-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+        <h2 className="text-3xl font-bold text-blue-600 mb-2">
           Main Dashboard
         </h2>
         <Outlet />

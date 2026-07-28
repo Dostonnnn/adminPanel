@@ -23,7 +23,9 @@ export default function Products() {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Products</h2>
+      <h2 className="text-3xl font-bold text-white bg-blue-600 rounded-2xl p-3 mb-6 mt-6">
+        Products
+      </h2>
 
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
         <table className="w-full text-left">
