@@ -30,7 +30,7 @@ export default function Products() {
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-blue-600">
               <th className="px-5 py-3 text-sm font-semibold text-gray-700">
                 ID
               </th>
@@ -56,11 +56,7 @@ export default function Products() {
               <tr key={item.id} className="border-t border-gray-200">
                 <td className="px-5 py-3 text-sm text-gray-600">{item.id}</td>
                 <td className="px-5 py-3">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-10 w-10 object-contain"
-                  />
+                  <img src={item.image} className="h-10 w-10 object-contain" />
                 </td>
                 <td className="px-5 py-3 text-sm text-blue-600 max-w-xs truncate">
                   {item.title}

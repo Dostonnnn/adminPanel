@@ -30,7 +30,7 @@ export default function Users() {
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-blue-600">
               <th className="px-5 py-3 text-sm font-semibold text-gray-700">
                 ID
               </th>
