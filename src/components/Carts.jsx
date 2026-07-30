@@ -1,25 +1,20 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Table from "./table";
 
-export default function Carts() {
-  const [carts, setCarts] = useState([]);
+export default function Products() {
+  const [carts, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/carts")
-      .then((res) => {
-        setCarts(res.data);
-      })
-      .catch(() => {
-        console.log("Cartlarni olishda xatolik");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      .then((res) => setProducts(res.data))
+      .catch(() => console.log("Error occurred"))
+      .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="text-gray-500">Loading</p>;
+  if (loading) return <p className="text-gray-500 p-4">Loading...</p>;
 
   return (
     <div>
@@ -28,38 +23,7 @@ export default function Carts() {
       </h2>
 
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-        <table className="w-full text-left">
-          <thead>
-            <tr className="bg-blue-600">
-              <th className="px-5 py-3 text-sm font-semibold text-gray-700">
-                Cart ID
-              </th>
-              <th className="px-5 py-3 text-sm font-semibold text-gray-700">
-                User ID
-              </th>
-              <th className="px-5 py-3 text-sm font-semibold text-gray-700">
-                Date
-              </th>
-              <th className="px-5 py-3 text-sm font-semibold text-gray-700">
-                Items
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {carts.map((cart) => (
-              <tr key={cart.id} className="border-t border-gray-200">
-                <td className="px-5 py-3 text-sm text-blue-600">{cart.id}</td>
-                <td className="px-5 py-3 text-sm text-gray-600">
-                  {cart.userId}
-                </td>
-                <td className="px-5 py-3 text-sm text-gray-600">{cart.date}</td>
-                <td className="px-5 py-3 text-sm text-gray-600">
-                  {cart.products.length}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Table carts={carts} />
       </div>
     </div>
   );
