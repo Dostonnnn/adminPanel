@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Table from "./table";
+import Table from "./Table";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
