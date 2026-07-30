@@ -11,6 +11,7 @@ export default function Users() {
       .then((res) => setUsers(res.data))
       .catch(() => console.log("Error"))
       .finally(() => setLoading(false));
+    //salom
   }, []);
 
   if (loading) return <p className="text-gray-500 p-4">Loading...</p>;
